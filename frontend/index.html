@@ -6,9 +6,20 @@
     <title>Music Discovery App</title>
 </head>
 <body>
-    <h1>Music Discovery App</h1>
-    <button onclick="test()" id="get-recommendations">Get Recommendations</button>
+    <h2>Find Recipes</h2>
+    
+    <form id="recipeForm">
+        <label for="diet">Dietary Restrictions (comma-separated):</label>
+        <input type="text" id="diet" name="diet" placeholder="vegetarian, gluten free"><br><br>
 
-    <script src="js/script.js"></script> <!-- Adjust path if necessary -->
+        <label for="ingredients">Ingredients (comma-separated):</label>
+        <input type="text" id="ingredients" name="ingredients" placeholder="chicken, tomato, onion"><br><br>
+
+        <button type="submit">Search</button>
+    </form>
+
+    <h3>Results:</h3>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
