@@ -10,7 +10,6 @@ const router = express.Router();
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
 
-// Get an access token using Client Credentials Flow
 const getAccessToken = async () => {
     try {
         const response = await fetch('https://accounts.spotify.com/api/token', {
@@ -30,9 +29,8 @@ const getAccessToken = async () => {
     }
 };
 
-// Fetch music recommendations using seed track
 router.get('/recommendations', async (req, res) => {
-    const seedTrack = '3n3Ppam7vgaVa1iaRUc9Lp'; // Hardcoded "Smells Like Teen Spirit" by Nirvana
+    const seedTrack = '3n3Ppam7vgaVa1iaRUc9Lp';
 
     try {
         const token = await getAccessToken();
@@ -45,7 +43,6 @@ router.get('/recommendations', async (req, res) => {
         const data = await response.json();
         if (!data.tracks) return res.status(404).json({ error: 'No recommendations found' });
 
-        // Send the recommended tracks back as JSON response
         res.json({
             tracks: data.tracks.map(track => ({
                 name: track.name,
@@ -56,12 +53,10 @@ router.get('/recommendations', async (req, res) => {
         });
     } catch (error) {
         console.error('Error fetching recommendations:', error);
-        res.status(500).json({ error: 'Server error' });
+        res.status(500).json({ error: error });
     }
 });
 
-// Routes
-app.use('/.netlify/functions/api', router); // For Netlify serverless functions
+app.use('/.netlify/functions/api', router);
 
-// Export the handler for serverless deployment
 export const handler = serverless(app);
