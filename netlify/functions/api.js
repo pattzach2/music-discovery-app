@@ -8,7 +8,7 @@ dotenv.config();
 const app = express();
 const router = express.Router();
 
-const API_KEY = process.env.API_KEY;
+const API_KEY = ec74cc8195024ee6a933237b3adc6613;
 
 router.get('/getrecipes', async (req, res) => {
     try {
