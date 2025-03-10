@@ -1,6 +1,6 @@
-import { JSDOM } from "jsdom";
-import fs from "fs";
-import path from "path";
+const { JSDOM } = require("jsdom");
+const fs = require("fs");
+const path = require("path");
 
 const html = fs.readFileSync(path.resolve(__dirname, "../frontend/index.html"), "utf8");
 
@@ -15,7 +15,7 @@ describe("Recipe Discovery App UI", () => {
     it ("should have diet input field", () => {
         const dietInput = document.querySelector("#diet");
         expect(dietInput).not.toBeNull();
-        expect(dietInput.placeholder).toBe("vegetarion, gluten free");
+        expect(dietInput.placeholder).toBe("vegetarian, gluten free");
     });
 
     it ("should have an ingredients input field", () => {

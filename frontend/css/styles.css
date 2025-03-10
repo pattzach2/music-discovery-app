@@ -2,13 +2,10 @@ body {
     font-family: Arial, sans-serif;
     background-color: lightgrey;
     padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
     margin: 0;
     flex-direction: column;
-    overflow: auto;
+    text-align: center;
 }
 
 h2 {
@@ -20,8 +17,8 @@ form {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    margin-bottom: 30px;
-    width: 300px;
+    margin: 0 auto 30px auto;
+    width: 50%;
     box-sizing: border-box;
 }
 

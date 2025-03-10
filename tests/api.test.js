@@ -1,5 +1,5 @@
-import request from "supertest";
-import { handler } from "../netlify/functions/api.js";
+const request = require("supertest");
+const { handler } = require("../netlify/functions/api.js")
 
 describe ("Recipe API", () => {
     it ("should return recipe data for valid diet and ingredients", async () => {
