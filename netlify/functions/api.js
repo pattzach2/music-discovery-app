@@ -13,7 +13,7 @@ const API_KEY = process.env.API_KEY;
 router.get('/getrecipes', async (req, res) => {
     try {
         const response = await fetch(`https://api.spoonacular.com/recipes/716429/information?apiKey=${API_KEY}&includeNutrition=true`);
-        const data = {apiKey: API_KEY};
+        const data = await response.json();
 
         res.json(data);
     } catch (error) {
