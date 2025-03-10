@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', async () => {
+async function test() {
     try {
         const response = await fetch(`/api/recommendations`);
         const data = await response.json();
@@ -13,4 +13,4 @@ document.addEventListener('DOMContentLoaded', async () => {
     } catch (error) {
         console.error('Error fetching recommendations:', error);
     }
-});
+}
