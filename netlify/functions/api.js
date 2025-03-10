@@ -9,11 +9,10 @@ const app = express();
 const router = express.Router();
 
 const API_KEY = process.env.API_KEY;
-const BASE_URL = 'https://api.spoonacular.com/recipes/complexSearch';
 
 router.get('/getrecipes', async (req, res) => {
     try {
-        const response = await fetch(`${BASE_URL}?query=pasta&apiKey=${API_KEY}`);
+        const response = await fetch(`https://api.spoonacular.com/recipes/716429/information?apiKey=${API_KEY}&includeNutrition=true`);
         const data = await response.json();
 
         res.json(data);
