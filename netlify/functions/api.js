@@ -13,13 +13,9 @@ const BASE_URL = 'https://api.spoonacular.com/recipes/complexSearch';
 
 router.get('/getrecipes', async (req, res) => {
     try {
-        const response = await fetch(BASE_URL + '?query=pasta', {
-            headers: {
-                'x-api-key': API_KEY
-            }
-        });
-
+        const response = await fetch(`${BASE_URL}?query=pasta&apiKey=${API_KEY}`);
         const data = await response.json();
+
         res.json(data);
     } catch (error) {
         console.error('Error fetching recipes:', error);
