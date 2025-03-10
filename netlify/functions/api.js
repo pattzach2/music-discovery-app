@@ -32,7 +32,9 @@ const getAccessToken = async () => {
 router.get('/recommendations', async (req, res) => {
     const seedTrack = '3n3Ppam7vgaVa1iaRUc9Lp';
 
-    console.log("hello");
+    res.json({
+        testing: "testing"
+    });
 
     // try {
     //     const token = await getAccessToken();
