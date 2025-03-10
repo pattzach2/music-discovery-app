@@ -3,6 +3,8 @@ async function test() {
         const response = await fetch(`/.netlify/functions/api/recommendations`);
         const data = await response.json();
 
+        console.log(data);
+
         if (data.tracks) {
             console.log('Recommended Songs:');
             data.tracks.forEach(track => {
