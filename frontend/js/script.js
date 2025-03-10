@@ -1,6 +1,6 @@
 async function test() {
     try {
-        const response = await fetch(`/api/recommendations`);
+        const response = await fetch(`/.netlify/functions/api/recommendations`);
         const data = await response.json();
 
         if (data.tracks) {
